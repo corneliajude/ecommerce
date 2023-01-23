@@ -6,7 +6,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        'screen-1/3': '33vw',
+        // definire clasa ptr. latime 1/3 screen width
+      },
+    },
   },
   plugins: [],
-}
+};
