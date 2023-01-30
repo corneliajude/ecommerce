@@ -1,36 +1,27 @@
+import { CartControls } from '@/components/cart';
+import { GridControls, ProductGrid } from '@/components/catalog';
 import { Layout } from '@/layouts';
-import { css } from '@emotion/css';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { FaApple } from 'react-icons/fa';
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
-  }, [setProducts]);
-
   return (
     <>
       <Head>
-        <title>Homepage</title>
+        <title>Home - Pixellab Ecom App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Layout>
-        <main>
-          {products.map((product) => {
-            return <span key={product.id}>{product.title}</span>;
-          })}
+        <main className="container px-4 mx-auto">
+          <header className="flex justify-end">
+            <GridControls></GridControls>
+            <CartControls></CartControls>
+          </header>
+
+          <section className="mt-16">
+            <ProductGrid></ProductGrid>
+          </section>
         </main>
       </Layout>
     </>
