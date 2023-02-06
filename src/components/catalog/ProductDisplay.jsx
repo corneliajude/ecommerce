@@ -7,7 +7,7 @@ export const ProductDisplay = ({ productId }) => {
   const { product, httpStatus, loading } = useProduct(productId);
 
   if (loading) {
-    return <div className="container mx-auto px-4">...loading</div>;
+    return <div className="container mx-auto px-4">Loading..</div>;
   }
 
   if (httpStatus === 404) {

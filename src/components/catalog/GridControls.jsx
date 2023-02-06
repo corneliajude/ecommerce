@@ -42,7 +42,7 @@ export const GridControls = () => {
       <li>
         <button
           type="button"
-          title="Two per row"
+          title="Four per row"
           className={`${buttonClasses} ${
             itemsPerRow === '4/row' ? 'bg-neutral-900 text-white' : ''
           }`}

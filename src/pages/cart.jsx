@@ -4,6 +4,9 @@ import { Layout } from '@/layouts';
 import Head from 'next/head';
 
 const CartPage = () => {
+  // const { cart } = useContext(CartContext)
+  const { cart } = { cart: [] };
+
   return (
     <>
       <Head>
@@ -34,7 +37,13 @@ const CartPage = () => {
               <CartTotals></CartTotals>
 
               <div>
-                <button type="button" title="Proceed to checkout">
+                <button
+                  type="button"
+                  title="Proceed to checkout"
+                  onClick={() => {
+                    console.log(cart);
+                  }}
+                >
                   Proceed to checkout
                 </button>
               </div>
