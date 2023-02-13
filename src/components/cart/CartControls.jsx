@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { CartQuantity } from '.';
+import { BiStore } from 'react-icons/bi';
 
 export const CartControls = () => {
   return (
@@ -9,7 +11,10 @@ export const CartControls = () => {
           title="Cart"
           className="w-20 h-20 flex justify-center items-center"
         >
-          Cart
+          <span className="relative">
+            Cart
+            <CartQuantity className="absolute -top-4 -right-4"></CartQuantity>
+          </span>
         </Link>
       </li>
     </ul>
